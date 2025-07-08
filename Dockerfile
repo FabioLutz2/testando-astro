@@ -1,0 +1,13 @@
+FROM node:24.3.0-alpine3.22
+
+WORKDIR /app
+
+COPY package*.json .
+
+RUN npm ci
+
+COPY . .
+
+EXPOSE 4321
+
+CMD [ "npx", "astro", "dev", "--host", "0.0.0.0", "--port", "4321" ]

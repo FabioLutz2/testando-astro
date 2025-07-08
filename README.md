@@ -8,11 +8,35 @@ Talvez, futuramente, quando eu terminar, eu lance uma versão organizada e funci
 
 ## Commandos
 
-Esses são os principais comandos:
+### Contêiner
+
+#### Docker
+
+Se estiver usando o Docker, pode ser rodado com os seguinte comando:
+
+```
+docker compose up
+```
+
+Pode ser parado com `CTRL+C` ou `docker compose down`.
+
+#### Podman
+
+Se estiver usando o Podman, pode ser rodado com o seguinte comando:
+
+```
+podman compose up
+```
+
+Pode ser parado com `CTRL+C` ou `podman compose down`.
+
+### Nativamente
+
+Para rodar nativamente na própria máquina, esses são os principais comandos:
 
 | Comando | Resultado |
 | :---: | :--- |
-| `npm install`             | Instala todas as dependências |
-| `npm run dev`             | Inicia o servidor local de desenvolvimento em `localhost:4321` |
-| `npm run build`           | Builda o projeto em `./dist/` |
-| `npm run preview`         | Inicia o projeto buildado em `localhost:4321` |
+| `npm install` | Instala todas as dependências |
+| `npm run dev` | Inicia o servidor local de desenvolvimento em `localhost:4321` |
+| `npm run build` | Builda o projeto em `./dist/` |
+| `npm run preview` | Inicia o projeto buildado em `localhost:4321` |

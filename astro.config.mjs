@@ -32,8 +32,8 @@ export default defineConfig({
   },
 
   server: {
-    host: false,
-    port: 4321,
+    host: process.env.HOST || "localhost",
+    port: Number(process.env.PORT) || 4321,
   },
 
   build: {

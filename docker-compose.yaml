@@ -1,0 +1,11 @@
+services:
+  site:
+    build: .
+    container_name: astro
+    ports:
+      - "4321:4321"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=4321
+    volumes:
+      - .:/app
