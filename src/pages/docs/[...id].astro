@@ -1,0 +1,23 @@
+---
+import "../../styles/global.css";
+
+import Layout from "@layouts/Layout-md.astro";
+
+import { getAllProcessedDocs } from "src/utils/processMd/processDocs.ts";
+
+export async function getStaticPaths() {
+  const allDocs = await getAllProcessedDocs();
+  
+  return allDocs.map(processedDoc => ({
+    params: { id: processedDoc.id },
+    props: { doc: processedDoc, headings: processedDoc.headings }
+  }));
+}
+
+const { doc, headings } = Astro.props;
+const { ContentComponent } = doc;
+---
+
+<Layout title={doc.title} description={doc.description} headings={headings}>
+    <ContentComponent />
+</Layout>

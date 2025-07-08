@@ -3,12 +3,35 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "generateIndex": "node src/utils/search/generateSearchIndex.js",
+    "dev": "npm run generateIndex && astro dev",
+    "build": "npm run generateIndex && astro build",
     "preview": "astro preview",
+    "check": "astro check",
+    "info": "astro info",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.10.1"
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/markdoc": "^0.15.0",
+    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/react": "^4.3.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "astro": "^5.10.1",
+    "gray-matter": "^4.0.3",
+    "minisearch": "^7.1.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "remark": "^15.0.1",
+    "remove-markdown": "^0.6.2",
+    "strip-markdown": "^6.0.0",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "ts-node": "^10.9.2"
   }
 }
