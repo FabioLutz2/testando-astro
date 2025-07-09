@@ -9,3 +9,4 @@ services:
       - PORT=4321
     volumes:
       - .:/app
+      - /app/node_modules
