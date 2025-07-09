@@ -7,6 +7,8 @@ import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import mdx from "@astrojs/mdx";
 
+import alpinejs from "@astrojs/alpinejs";
+
 // https://astro.build/config
 export default defineConfig({  
   root: process.cwd(),
@@ -22,7 +24,7 @@ export default defineConfig({
   output: "static",
   adapter: undefined,
 
-  integrations: [react(), markdoc(), mdx()],
+  integrations: [react(), markdoc(), mdx(), alpinejs()],
 
   markdown: {
     syntaxHighlight: "shiki",

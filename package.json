@@ -12,13 +12,16 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/alpinejs": "^0.4.8",
     "@astrojs/check": "^0.9.4",
     "@astrojs/markdoc": "^0.15.0",
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/react": "^4.3.0",
     "@tailwindcss/vite": "^4.1.11",
+    "@types/alpinejs": "^3.13.11",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "alpinejs": "^3.14.9",
     "astro": "^5.10.1",
     "gray-matter": "^4.0.3",
     "minisearch": "^7.1.2",
