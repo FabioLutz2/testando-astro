@@ -1,10 +1,10 @@
-import MiniSearch from 'minisearch';
+import MiniSearch from "minisearch";
 
 let searchInstance: MiniSearch | null = null;
 
 const miniSearchConfig = {
-  fields: ['title', 'content', 'description', 'headings'],
-  storeFields: ['id', 'title', 'description'],
+  fields: ["title", "content", "description", "headings"],
+  storeFields: ["id", "title", "description", "headings"],
 };
 
 export async function initSearch(documents: any[]) {
@@ -22,7 +22,7 @@ export function performSearch(query: string) {
 
   return searchInstance.search(query, {
     prefix: true,
-    fuzzy: 0.2
+    fuzzy: 0.2,
   });
 }
 

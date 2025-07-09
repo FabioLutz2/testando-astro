@@ -3,14 +3,13 @@ import { defineConfig } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
-import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import mdx from "@astrojs/mdx";
 
-import alpinejs from "@astrojs/alpinejs";
+import preact from "@astrojs/preact";
 
 // https://astro.build/config
-export default defineConfig({  
+export default defineConfig({
   root: process.cwd(),
   srcDir: "./src",
   publicDir: "./public",
@@ -24,7 +23,7 @@ export default defineConfig({
   output: "static",
   adapter: undefined,
 
-  integrations: [react(), markdoc(), mdx(), alpinejs()],
+  integrations: [markdoc(), mdx(), preact()],
 
   markdown: {
     syntaxHighlight: "shiki",
@@ -45,6 +44,14 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      alias: {
+        react: "preact/compat",
+        "react-dom": "preact/compat",
+        "react/jsx-runtime": "preact/jsx-runtime",
+        "react/jsx-dev-runtime": "preact/jsx-dev-runtime",
+      },
+    },
   },
 
   devToolbar: {

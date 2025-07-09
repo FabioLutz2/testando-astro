@@ -1,36 +1,4 @@
-<div>
-  <input id="search-input" type="search" placeholder="Buscar..." />
-  <ul id="search-results"></ul>
-</div>
-
-<script type="module">
-  import { loadSearchIndexJSON } from '/src/utils/search/indexLoader.ts';
-  import { initSearch, performSearch } from '/src/utils/search/searchEngine.ts';
-
-  document.addEventListener('DOMContentLoaded', async () => {
-    await setupSearch();
-
-    const input = document.getElementById('search-input');
-    input?.addEventListener('input', () => {
-      const results = performSearch(input.value.trim());
-      renderResults(results);
-    });
-  });
-
-  async function setupSearch() {
-    try {
-      const indexData = await loadSearchIndexJSON();
-      await initSearch(indexData);
-    } catch (e) {
-      console.error('Erro ao carregar a busca', e);
-    }
-  }
-
-  function renderResults(results) {
-    const container = document.getElementById('search-results');
-    if (!container) return;
-    container.innerHTML = results.length
-      ? results.map(r => `<li><a href="/docs${r.id}">${r.title}</a></li>`).join('')
-      : '<li>Nenhum resultado</li>';
-  }
-</script>
+---
+import SearchClient from "@components/SearchClient";
+---
+<SearchClient client:load />

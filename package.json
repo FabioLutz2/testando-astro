@@ -12,11 +12,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/alpinejs": "^0.4.8",
     "@astrojs/check": "^0.9.4",
     "@astrojs/markdoc": "^0.15.0",
     "@astrojs/mdx": "^4.3.0",
-    "@astrojs/react": "^4.3.0",
+    "@astrojs/preact": "^4.1.0",
     "@tailwindcss/vite": "^4.1.11",
     "@types/alpinejs": "^3.13.11",
     "@types/react": "^19.1.8",
@@ -25,8 +24,7 @@
     "astro": "^5.10.1",
     "gray-matter": "^4.0.3",
     "minisearch": "^7.1.2",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "preact": "^10.26.9",
     "remark": "^15.0.1",
     "remove-markdown": "^0.6.2",
     "strip-markdown": "^6.0.0",
