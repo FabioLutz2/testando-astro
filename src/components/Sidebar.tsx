@@ -1,0 +1,19 @@
+import { getCollection } from "astro:content";
+
+const docs = await getCollection("docs");
+
+export default function Sidebar() {
+  return (
+    <nav class="bg-gray-100 w-full h-full overflow-y-auto">
+      <ul class="list-none block">
+        {docs.map((doc) => (
+          <li key={doc.id} id={doc.id}>
+            <a href={`/docs/${doc.id}`} class="text-blue-600 hover:underline">
+              {doc.data.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
