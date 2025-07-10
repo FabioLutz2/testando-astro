@@ -4,6 +4,7 @@ import type { ProcessedDoc } from "./docTypes";
 
 export async function getProcessedDoc(doc: any): Promise<ProcessedDoc> {
   const { Content, headings } = await render(doc);
+
   return {
     ...doc.data,
     id: doc.id,

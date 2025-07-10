@@ -1,5 +1,5 @@
 ---
-import Search from "./Search.astro"
+import Search from "@components/Search.tsx"
 ---
 
 <header class="bg-gray-600 text-white py-5">
@@ -10,6 +10,6 @@ import Search from "./Search.astro"
         <nav class="px-5">
             <a href="/docs" class="hover:text-gray-300">Docs</a>
         </nav>
-        <Search />
+        <Search client:load />
     </div>
 </header>
